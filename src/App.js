@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './components/store';
+import Routes from './routes';
+import { Container } from '@material-ui/core/';
+import Header from './components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  
+  const localCart = JSON.parse(localStorage.getItem('dioshopping: cart'))
+  
+  if(localCart !== null) {
+    store.dispatch({type: 'CHANGE_CART', localCart})
+  }
+  
+  return(
+    <Provider store={store}>
+      <Container maxWidth="xl">
+        <Router>
+          <Header />
+          <Routes />
+        </Router>
+      </Container> 
+    </Provider>
+  )
 }
 
 export default App;
