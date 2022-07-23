@@ -1,0 +1,145 @@
+:root{
+    --header-color:white;
+}
+
+*{
+    margin: 0;
+    border: 0;
+    background: none;
+    word-wrap: break-word;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------- */
+/* header Section */
+
+header div a{
+    text-decoration: none;
+    color: var(--header-color);
+    padding-left: 2em;
+}
+
+header button{
+    font-size: 2em;
+    align-items: center;
+    color: var(--header-color);
+    cursor: pointer;
+}
+
+.header-style{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7em;
+    background: green;
+    color: var(--header-color);
+}
+
+/* header section ends here */
+/* ------------------------------------------------------- */
+/* Cart section starts here */
+
+.cart-position{
+    position: absolute;
+    text-align: center;
+    border: 3px solid black;
+    right: 0;
+    width: 18em;
+    min-height: fit-content;
+    background-color: white;
+}
+
+.display-cart{
+    display:none;
+}
+
+.cart-item{
+    display: grid;
+    grid-template-areas: 
+    "sidebar name del"
+    "sidebar price del"
+    "sidebar counter del" ;
+    color: green;
+}
+
+.cart-item .price{
+    grid-area: price;
+    font-size: 1em;
+}
+
+.cart-item .name{
+    grid-area: name;
+    font-size: 1.5em;
+}
+.cart-item .counter{
+    grid-area: counter;
+}
+
+.cart-item .del-button{
+    grid-area: del;
+    color: red;
+    font-weight: bold
+}
+
+.cart-item .sidebar{
+    grid-area: sidebar;
+}
+
+.cart-item img{
+    max-width: 6em;
+}
+
+.cart-item button{
+    grid-area: del;
+    color: red;
+    font-size: 1em;
+    margin: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+/* cart section ends here */
+/* ------------------------------------------------------- */
+/* main content starts here */
+
+.product-container{
+    padding: 0;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px 10px;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.product-item{
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    border-radius: 1em;
+}
+
+.product-item img{
+    max-width: 10em;
+}
+
+.product-container p{
+    color: red;
+}
+
+.product-item button{
+    color: white;
+    background-color: green;
+    padding: 1em 5em;
+    transition: .5s;
+    border-radius: .7em;
+}
+
+.product-container button:hover{
+    background-color: rgb(80, 80, 80);
+}
+
+/* Main content ends here */
+/* ------------------------------------------------------- */

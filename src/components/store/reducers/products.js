@@ -1,7 +1,8 @@
-import productsList from './product';
+import ProductsList from "./ProductsList";
 
-const PRODUCT = productsList;
+const PRODUCT = ProductsList;
 
-export default function products(state = PRODUCT){
+export function ProductState(state = PRODUCT)
+{
     return state;
 }
